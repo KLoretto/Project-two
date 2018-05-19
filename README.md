@@ -7,7 +7,8 @@ Create an interactive Dashboard to display recent and historical Academy Award W
 
 Best Movie,
 Best Actor,
-Best Actress
+Best Actress,
+Best Director
 
 Dataset to include:
 
