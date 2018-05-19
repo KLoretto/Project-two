@@ -21,7 +21,16 @@ Since the Academy Awards website does not have an API.  We plan to scrape the da
 Wikipedia,
 Omdb,
 Imdb,
-Cinemasight
+Cinemasight,
+Kaggle
+
+Landing Page with links to four catagories
+Each catagory page will have 3 pages
+  1) Graphs - Pie for genre / Bubble for Budget vs Rev / Bar - Ratings
+  2) Map - 
+  3) Data
+
+
 
 Team Members
   Solomon,
