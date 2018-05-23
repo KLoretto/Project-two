@@ -1,0 +1,105 @@
+Film,Year,Ceremony,Award,Winner,Name,Budget,Revenue,Genre,City,Lat,Lon,Imdb,Metacritic,Rottentomatoes
+Darkest Hour,2017,90,Actor in a Leading Role,1,Gary Oldman,30000000,64626786,Biography,London,51.5074,0.1278,74,75,85
+Manchester by the Sea,2016,89,Actor in a Leading Role,1,Casey Affleck,9000000,75026965,Drama,Falmouth,50.1526,5.0663,78,96,95
+The Revenant,2015,88,Actor in a Leading Role,1,Leonardo DiCaprio,1000500,55561162,Drama,Hollywood,34.0928,118.3287,76,80,80
+The Theory of Everything,2014,87,Actor in a Leading Role,1,Eddie Redmayne,15000000,123726688,Biography,London,51.5074,0.1278,69,77,78
+Dallas Buyers Club,2013,86,Actor in a Leading Role,1,Matthew McConaughey,5000000,55198285,Biography,Uvalde,29.2097,99.7862,84,80,93
+Lincoln,2012,85,Actor in a Leading Role,1,Daniel Day-Lewis,65000000,275293450,Biography,London,51.5074,0.1278,86,74,90
+The Artist,2011,84,Actor in a Leading Role,1,Jean Dujardin,15000000,133432856,Comedy,Hauts-De-Seine,48.8285,2.2188,89,79,95
+The King's Speech,2010,83,Actor in a Leading Role,1,Colin Firth,15000000,414211549,Biography,Hampshire,51.0577,1.3081,88,80,95
+Crazy Heart,2009,82,Actor in a Leading Role,1,Jeff Bridges,7000000,39462438,Drama,Los Angeles,34.0522,118.2437,83,73,91
+Milk,2008,81,Actor in a Leading Role,1,Sean Penn,20000000,54586584,Biography,Santa Monica,34.0195,118.4912,84,76,94
+There Will Be Blood,2007,80,Actor in a Leading Role,1,Daniel Day-Lewis,25000000,77208711,Drama,London,51.5074,0.1278,93,81,91
+The Last King of Scotland,2006,79,Actor in a Leading Role,1,Forest Whitaker,6000000,48027970,Biography,Longview,32.5007,94.7405,74,77,87
+Capote,2005,78,Actor in a Leading Role,1,Philip Seymour Hoffman,7000000,49084830,Biography,Fairport,43.0987,77.4419,88,74,90
+Ray,2004,77,Actor in a Leading Role,1,Jamie Foxx,40000000,124731534,Biography,Terrell,32.736,96.2753,73,77,81
+Mystic River,2003,76,Actor in a Leading Role,1,Sean Penn,25000000,156822020,Crime,Santa Monica,34.0195,118.4912,84,80,87
+The Pianist,2002,75,Actor in a Leading Role,1,Adrien Brody,35000000,120072577,Biography,Woodhaven,42.139,83.2418,85,85,95
+Training Day,2001,74,Actor in a Leading Role,1,Denzel Washington,45000000,104876233,Crime,Mount Vernon,37.3529,84.3405,69,77,72
+Gladiator,2000,73,Actor in a Leading Role,1,Russell Crowe,103000000,457640427,Action,Wellington,41.2865,174.7762,67,85,77
+American Beauty,1999,72,Actor in a Leading Role,1,Kevin Spacey,15000000,356296601,Drama,South Orange,40.7489,74.261,86,84,88
+Life Is Beautiful,1998,71,Actor in a Leading Role,1,Roberto Benigni,20000000,229400000,Comedy,Tuscany,43.7711,11.2486,59,86,80
+As Good as It Gets,1997,70,Actor in a Leading Role,1,Jack Nicholson,50000000,314178011,Comedy,Neptune,40.2091,74.0386,67,77,84
+Shine,1996,69,Actor in a Leading Role,1,Geoffrey Rush,5000500,35811509,Biography,Toowoomba,27.5598,151.9507,87,77,91
+Leaving Las Vegas,1995,68,Actor in a Leading Role,1,Nicolas Cage,3600000,49800000,Drama,Long Beach,33.7701,118.1937,82,76,90
+Forrest Gump,1994,67,Actor in a Leading Role,1,Tom Hanks,55000000,677945399,Drama,Concord,37.978,122.0311,88,82,72
+Philadelphia,1993,66,Actor in a Leading Role,1,Tom Hanks,26000000,206678440,Drama,Concord,37.978,122.0311,77,66,78
+Scent of a Woman,1992,65,Actor in a Leading Role,1,Al Pacino,31000000,134095253,Drama,Harlem,40.8116,73.9465,80,59,88
+"Three Billboards Outside Ebbing, Missouri",2017,90,Actress in a Leading Role,1,Frances McDormand,1500000,157880842,Crime,New York City,40.7128,74.006,82,88,92
+La La Land,2016,89,Actress in a Leading Role,1,Emma Stone,30000000,445435700,Comedy,Scottsdale,33.4942,111.9261,81,93,92
+Room,2015,88,Actress in a Leading Role,1,Brie Larson,6000000,35401758,Drama,Sacramento,38.5816,121.4944,82,86,94
+Still Alice,2014,87,Actress in a Leading Role,1,Julianne Moore,5000000,43884652,Drama,Fayetteville,35.0527,78.8784,75,72,86
+Blue Jasmine,2013,86,Actress in a Leading Role,1,Cate Blanchett,18000000,99206215,Drama,Ivanhoe,-37.7688,145.0423,73,78,91
+Silver Linings Playbook,2012,85,Actress in a Leading Role,1,Jennifer Lawrence,21000000,205738714,Comedy,Indian Hills,38.2726,85.6627,78,81,92
+The Iron Lady,2011,84,Actress in a Leading Role,1,Meryl Streep,13000000,114956699,Biography,Summit ,40.7146,74.3646,64,54,51
+Black Swan,2010,83,Actress in a Leading Role,1,Natalie Portman,13000000,327803731,Drama,Jerusalem,31.7683,35.2137,80,79,86
+The Blind Side,2009,82,Actress in a Leading Role,1,Sandra Bullock,29000000,309208309,Biography,Arlington County,38.8816,77.091,77,53,66
+The Reader,2008,81,Actress in a Leading Role,1,Kate Winslet,32000000,113019290,Drama,Reading,51.4543,0.9781,76,58,62
+La Vie en Rose,2007,80,Actress in a Leading Role,1,Marion Cotillard,25000000,88613761,Biography,Paris,48.8566,2.3522,76,66,74
+The Queen,2006,79,Actress in a Leading Role,1,Helen Mirren,15000000,123384128,Biography,London,51.5074,0.1278,73,91,97
+Walk the Line,2005,78,Actress in a Leading Role,1,Reese Witherspoon,28000000,186438883,Biography,New Orleans,29.9511,90.0715,79,72,83
+Million Dollar Baby,2004,77,Actress in a Leading Role,1,Hilary Swank,30000000,216763646,Drama,Lincoln,40.8136,96.7026,81,86,90
+Monster,2003,76,Actress in a Leading Role,1,Charlize Theron,8000000,60378584,Biography,Gauteng,26.2708,28.1123,73,74,81
+The Hours,2002,75,Actress in a Leading Role,1,Nicole Kidman,25000000,41597830,Drama,Honolulu,21.3069,157.8583,76,80,81
+Monster's Ball,2001,74,Actress in a Leading Role,1,Halle Berry,4000000,44909486,Drama,Cleveland,41.4993,81.6944,71,69,85
+Erin Brockovich,2000,73,Actress in a Leading Role,1,Julia Roberts,52000000,256271286,Biography,Smyrna,33.884,84.5144,73,73,84
+Boys Don't Cry,1999,72,Actress in a Leading Role,1,Hilary Swank,2000000,11540607,Biography,Lincoln,40.8136,96.7026,76,86,88
+Shakespeare in Love,1998,71,Actress in a Leading Role,1,Gwyneth Paltrow,25000000,289317794,Comedy,Los Angeles,34.0522,118.2437,72,87,92
+As Good as It Gets,1997,70,Actress in a Leading Role,1,Helen Hunt,50000000,314178011,Comedy,Culver City,34.0211,118.3965,77,67,84
+Fargo,1996,69,Actress in a Leading Role,1,Frances McDormand,7000000,60611975,Crime,New York City,40.7128,74.006,81,85,93
+Dead Man Walking,1995,68,Actress in a Leading Role,1,Susan Sarandon,11000000,39363635,Crime,New York City,40.7128,74.006,75,80,95
+Blue Sky,1994,67,Actress in a Leading Role,1,Jessica Lange,16000000,3359465,Drama,Cloquet,46.7218,92.4612,64,NaN,77
+The Piano,1993,66,Actress in a Leading Role,1,Holly Hunter,7000000,116700000,Drama,Conyers,33.6676,84.0177,76,89,90
+Howards End,1992,65,Actress in a Leading Role,1,Emma Thompson,8000000,25966555,Drama,London,51.5074,0.1278,75,86,93
+The Shape of Water,2017,90,Best Picture,1,"Guillermo del Toro and J. Miles Dale, Producers",1940000,194349972,Adventure,Toronto,43.6532,79.3832,74,87,92
+Moonlight,2016,89,Best Picture,1,"Adele Romanski, Dede Gardner and Jeremy Kleiner, Producers",4000000,65046687,Drama,Miami,25.7617,80.1918,74,99,98
+Spotlight,2015,88,Best Picture,1,"Michael Sugar, Steve Golin, Nicole Rocklin and Blye Pagon Faust, Producers",20000000,88346473,Crime,Toronto,43.6532,79.3832,81,93,97
+Birdman or (The Unexpected Virtue of Ignorance),2014,87,Best Picture,1," Alejandro G. Iñárritu, John Lesher and James W. Skotchdopole, Producers",18000000,103215094,Comedy,New York City,40.7128,74.006,77,88,92
+12 Years a Slave,2013,86,Best Picture,1,"Brad Pitt, Dede Gardner, Jeremy Kleiner, Steve McQueen and Anthony Katagas, Producers",20000000,187000000,Biography,New Orleans,29.9511,90.0715,81,96,96
+Argo,2012,85,Best Picture,1,"Grant Heslov, Ben Affleck and George Clooney, Producers",44500000,232324128,Biography,McLean,38.9339,77.1773,77,86,96
+The Artist,2011,84,Best Picture,1,"Thomas Langmann, Producer",15000000,133432856,Comedy,Los Angeles,34.0522,118.2437,79,89,95
+The King's Speech,2010,83,Best Picture,1,"Iain Canning, Emile Sherman and Gareth Unwin, Producers",15000000,414211549,Biography,Buckinghamshire,51.8137,0.8095,80,88,95
+The Hurt Locker,2009,82,Best Picture,1,"Kathryn Bigelow, Mark Boal, Nicolas Chartier and Greg Shapiro, Producers",15000000,42000000,Drama,British Columbia,53.7267,127.6476,76,94,97
+Slumdog Millionaire,2008,81,Best Picture,1,"Christian Colson, Producer",15000000,377910544,Drama,Maharashtra,19.7515,75.7139,80,86,91
+No Country for Old Men,2007,80,Best Picture,1,"Scott Rudin, Ethan Coen and Joel Coen, Producers",25000000,171600000,Crime,Santa Fe,35.687,105.9378,81,91,93
+The Departed,2006,79,Best Picture,1,"Graham King, Producer",90000000,289847354,Crime,Quincy,42.2529,71.0023,85,85,90
+Crash,2005,78,Best Picture,1,"Paul Haggis and Cathy Schulman, Producers",10000000,98401061,Drama,Los Angeles,34.0522,118.2437,78,69,75
+Million Dollar Baby,2004,77,Best Picture,1,"Clint Eastwood, Albert S. Ruddy and Tom Rosenberg, Producers",30000000,216763646,Drama,Los Angeles,34.0522,118.2437,81,86,90
+The Lord of the Rings: The Return of the King,2003,76,Best Picture,1,"Barrie M. Osborne, Peter Jackson and Fran Walsh, Producers",79000000,926287400,Adventure,Wellington,41.2865,174.7762,89,94,93
+Chicago,2002,75,Best Picture,1,"Martin Richards, Producer",45000000,306776732,Comedy,Toronto,43.6532,79.3832,72,82,85
+A Beautiful Mind,2001,74,Best Picture,1,"Brian Grazer and Ron Howard, Producers",60000000,313542341,Biography,Bayonne,40.6687,74.1143,82,72,75
+Gladiator,2000,73,Best Picture,1,"Douglas Wick, David Franzoni and Branko Lustig, Producers",103000000,457640427,Action,Morocco,31.7917,7.0926,85,67,77
+American Beauty,1999,72,Best Picture,1,"Bruce Cohen and Dan Jinks, Producers",15000000,356296601,Drama,Los Angeles,34.0522,118.2437,84,86,88
+Shakespeare in Love,1998,71,Best Picture,1,"David Parfitt, Donna Gigliotti, Harvey Weinstein, Edward Zwick and Marc Norman, Producers",25000000,289317794,Comedy,London,51.5074,0.1278,72,87,92
+Titanic,1997,70,Best Picture,1,"James Cameron and Jon Landau, Producers",200000000,1845034188,Drama,Santa Clarita,34.3917,118.5426,78,75,88
+The English Patient,1996,69,Best Picture,1,"Saul Zaentz, Producer",27000000,231976425,Drama,Rome,41.9028,12.4964,74,87,84
+Braveheart,1995,68,Best Picture,1,"Mel Gibson, Alan Ladd, Jr. and Bruce Davey, Producers",72000000,210000000,Biography,Highland,57.4596,4.2264,84,68,77
+Forrest Gump,1994,67,Best Picture,1,"Wendy Finerman, Steve Tisch and Steve Starkey, Producers",55000000,677945399,Drama,Savannah,32.0809,81.0912,88,82,72
+Schindler's List,1993,66,Best Picture,1,"Steven Spielberg, Gerald R. Molen and Branko Lustig, Producers",22000000,321365567,Biography,Malopolskie,49.7225,20.2503,89,93,97
+Unforgiven,1992,65,Best Picture,1,"Clint Eastwood, Producer",14000000,159157447,Western,Alberta,53.9333,116.5765,82,85,96
+The Shape of Water,2017,90,Directing,1,Guillermo del Toro,1940000,194349972,Adventure,Guadalajara,20.6597,103.3496,74,87,92
+La La Land,2016,89,Directing,1,Damien Chazelle,30000000,445435700,Comedy,Providence,41.824,71.4128,81,93,92
+The Revenant,2015,88,Directing,1, Alejandro G. Iñárritu,1000500,55561162,Drama,Mexico City,19.4326,99.1332,80,76,80
+Birdman or (The Unexpected Virtue of Ignorance),2014,87,Directing,1, Alejandro G. Iñárritu,18000000,103215094,Comedy,Mexico City,19.4326,99.1332,77,88,92
+Gravity,2013,86,Directing,1,Alfonso Cuarón,20000000,187000000,Sci-Fi,Mexico City,19.4326,99.1332,78,96,96
+Life of Pi,2012,85,Directing,1,Ang Lee,120000000,609016565,Adventure,Pingtung,22.552,120.5488,79,79,87
+The Artist,2011,84,Directing,1,Michel Hazanavicius,15000000,133432856,Comedy,Paris,48.8566,2.3522,79,89,95
+The King's Speech,2010,83,Directing,1,Tom Hooper,15000000,414211549,Biography,London,51.5074,0.1278,80,88,95
+The Hurt Locker,2009,82,Directing,1,Kathryn Bigelow,15000000,42000000,Drama,San Carlos,37.5072,122.2605,76,94,97
+Slumdog Millionaire,2008,81,Directing,1,Danny Boyle,15000000,377910544,Drama,Manchester,53.4808,2.2426,80,86,91
+No Country for Old Men,2007,80,Directing,1,Joel Coen and Ethan Coen,25000000,171600000,Crime,Minneapolis,44.9778,93.265,81,91,93
+The Departed,2006,79,Directing,1,Martin Scorsese,90000000,289847354,Crime,Queens,40.7282,73.7949,85,85,90
+Brokeback Mountain,2005,78,Directing,1,Ang Lee,14000000,178043761,Drama,Pingtung,22.552,120.5488,77,87,87
+Million Dollar Baby,2004,77,Directing,1,Clint Eastwood,30000000,216763646,Drama,San Francisco,37.7749,122.4194,81,86,90
+The Lord of the Rings: The Return of the King,2003,76,Directing,1,Peter Jackson,79000000,926287400,Adventure,Pukerua Bay,41.0362,174.8871,89,94,93
+The Pianist,2002,75,Directing,1,Roman Polanski,35000000,120072577,Biography,Paris,48.8566,2.3522,85,85,95
+A Beautiful Mind,2001,74,Directing,1,Ron Howard,60000000,313542341,Biography,Duncan,34.5023,97.9578,82,72,75
+Traffic,2000,73,Directing,1,Steven Soderbergh,48000000,207515725,Crime,Atlanta,33.749,84.388,76,86,92
+American Beauty,1999,72,Directing,1,Sam Mendes,15000000,356296601,Drama,Berkshire,51.467,1.1854,84,86,88
+Saving Private Ryan,1998,71,Directing,1,Steven Spielberg,70000000,481840909,Action,Cincinnati,39.1031,84.512,86,90,92
+Titanic,1997,70,Directing,1,James Cameron,200000000,1845034188,Drama,Kapuskasing,49.3803,82.4001,78,75,88
+The English Patient,1996,69,Directing,1,Anthony Minghella,27000000,231976425,Drama,Isle of Wight,50.73,1.1633,74,87,84
+Braveheart,1995,68,Directing,1,Mel Gibson,72000000,210000000,Biography,Peekskill,41.2901,73.9204,84,68,77
+Forrest Gump,1994,67,Directing,1,Robert Zemeckis,55000000,677945399,Drama,Chicago,41.8781,87.6298,88,82,72
+Schindler's List,1993,66,Directing,1,Steven Spielberg,22000000,321365567,Biography,Cincinnati,39.1031,84.512,89,93,97
+Unforgiven,1992,65,Directing,1,Clint Eastwood,14000000,159157447,Western,San Francisco,37.7749,122.4194,82,85,96
