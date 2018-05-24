@@ -1,0 +1,105 @@
+Ceremony,Year,Film,Award,Name,Budget,Revenue,Genre,Imdb,Metacritic,Rottentomatoes
+90,2017,Darkest Hour,Actor in a Leading Role,Gary Oldman,30000000,64626786,Biography,74,75,85
+89,2016,Manchester by the Sea,Actor in a Leading Role,Casey Affleck,9000000,75026965,Drama,78,96,95
+88,2015,The Revenant,Actor in a Leading Role,Leonardo DiCaprio,1000500,55561162,Drama,76,80,80
+87,2014,The Theory of Everything,Actor in a Leading Role,Eddie Redmayne,15000000,123726688,Biography,69,77,78
+86,2013,Dallas Buyers Club,Actor in a Leading Role,Matthew McConaughey,5000000,55198285,Biography,84,80,93
+85,2012,Lincoln,Actor in a Leading Role,Daniel Day-Lewis,65000000,275293450,Biography,86,74,90
+84,2011,The Artist,Actor in a Leading Role,Jean Dujardin,15000000,133432856,Comedy,89,79,95
+83,2010,The King's Speech,Actor in a Leading Role,Colin Firth,15000000,414211549,Biography,88,80,95
+82,2009,Crazy Heart,Actor in a Leading Role,Jeff Bridges,7000000,39462438,Drama,83,73,91
+81,2008,Milk,Actor in a Leading Role,Sean Penn,20000000,54586584,Biography,84,76,94
+80,2007,There Will Be Blood,Actor in a Leading Role,Daniel Day-Lewis,25000000,77208711,Drama,93,81,91
+79,2006,The Last King of Scotland,Actor in a Leading Role,Forest Whitaker,6000000,48027970,Biography,74,77,87
+78,2005,Capote,Actor in a Leading Role,Philip Seymour Hoffman,7000000,49084830,Biography,88,74,90
+77,2004,Ray,Actor in a Leading Role,Jamie Foxx,40000000,124731534,Biography,73,77,81
+76,2003,Mystic River,Actor in a Leading Role,Sean Penn,25000000,156822020,Crime,84,80,87
+75,2002,The Pianist,Actor in a Leading Role,Adrien Brody,35000000,120072577,Biography,85,85,95
+74,2001,Training Day,Actor in a Leading Role,Denzel Washington,45000000,104876233,Crime,69,77,72
+73,2000,Gladiator,Actor in a Leading Role,Russell Crowe,103000000,457640427,Action,67,85,77
+72,1999,American Beauty,Actor in a Leading Role,Kevin Spacey,15000000,356296601,Drama,86,84,88
+71,1998,Life Is Beautiful,Actor in a Leading Role,Roberto Benigni,20000000,229400000,Comedy,59,86,80
+70,1997,As Good as It Gets,Actor in a Leading Role,Jack Nicholson,50000000,314178011,Comedy,67,77,84
+69,1996,Shine,Actor in a Leading Role,Geoffrey Rush,5000500,35811509,Biography,87,77,91
+68,1995,Leaving Las Vegas,Actor in a Leading Role,Nicolas Cage,3600000,49800000,Drama,82,76,90
+67,1994,Forrest Gump,Actor in a Leading Role,Tom Hanks,55000000,677945399,Drama,88,82,72
+66,1993,Philadelphia,Actor in a Leading Role,Tom Hanks,26000000,206678440,Drama,77,66,78
+65,1992,Scent of a Woman,Actor in a Leading Role,Al Pacino,31000000,134095253,Drama,80,59,88
+90,2017,"Three Billboards Outside Ebbing, Missouri",Actress in a Leading Role,Frances McDormand,1500000,157880842,Crime,82,88,92
+89,2016,La La Land,Actress in a Leading Role,Emma Stone,30000000,445435700,Comedy,81,93,92
+88,2015,Room,Actress in a Leading Role,Brie Larson,6000000,35401758,Drama,82,86,94
+87,2014,Still Alice,Actress in a Leading Role,Julianne Moore,5000000,43884652,Drama,75,72,86
+86,2013,Blue Jasmine,Actress in a Leading Role,Cate Blanchett,18000000,99206215,Drama,73,78,91
+85,2012,Silver Linings Playbook,Actress in a Leading Role,Jennifer Lawrence,21000000,205738714,Comedy,78,81,92
+84,2011,The Iron Lady,Actress in a Leading Role,Meryl Streep,13000000,114956699,Biography,64,54,51
+83,2010,Black Swan,Actress in a Leading Role,Natalie Portman,13000000,327803731,Drama,80,79,86
+82,2009,The Blind Side,Actress in a Leading Role,Sandra Bullock,29000000,309208309,Biography,77,53,66
+81,2008,The Reader,Actress in a Leading Role,Kate Winslet,32000000,113019290,Drama,76,58,62
+80,2007,La Vie en Rose,Actress in a Leading Role,Marion Cotillard,25000000,88613761,Biography,76,66,74
+79,2006,The Queen,Actress in a Leading Role,Helen Mirren,15000000,123384128,Biography,73,91,97
+78,2005,Walk the Line,Actress in a Leading Role,Reese Witherspoon,28000000,186438883,Biography,79,72,83
+77,2004,Million Dollar Baby,Actress in a Leading Role,Hilary Swank,30000000,216763646,Drama,81,86,90
+76,2003,Monster,Actress in a Leading Role,Charlize Theron,8000000,60378584,Biography,73,74,81
+75,2002,The Hours,Actress in a Leading Role,Nicole Kidman,25000000,41597830,Drama,76,80,81
+74,2001,Monster's Ball,Actress in a Leading Role,Halle Berry,4000000,44909486,Drama,71,69,85
+73,2000,Erin Brockovich,Actress in a Leading Role,Julia Roberts,52000000,256271286,Biography,73,73,84
+72,1999,Boys Don't Cry,Actress in a Leading Role,Hilary Swank,2000000,11540607,Biography,76,86,88
+71,1998,Shakespeare in Love,Actress in a Leading Role,Gwyneth Paltrow,25000000,289317794,Comedy,72,87,92
+70,1997,As Good as It Gets,Actress in a Leading Role,Helen Hunt,50000000,314178011,Comedy,77,67,84
+69,1996,Fargo,Actress in a Leading Role,Frances McDormand,7000000,60611975,Crime,81,85,93
+68,1995,Dead Man Walking,Actress in a Leading Role,Susan Sarandon,11000000,39363635,Crime,75,80,95
+67,1994,Blue Sky,Actress in a Leading Role,Jessica Lange,16000000,3359465,Drama,64,NaN,77
+66,1993,The Piano,Actress in a Leading Role,Holly Hunter,7000000,116700000,Drama,76,89,90
+65,1992,Howards End,Actress in a Leading Role,Emma Thompson,8000000,25966555,Drama,75,86,93
+90,2017,The Shape of Water,Best Picture,"Guillermo del Toro and J. Miles Dale, Producers",1940000,194349972,Adventure,74,87,92
+89,2016,Moonlight,Best Picture,"Adele Romanski, Dede Gardner and Jeremy Kleiner, Producers",4000000,65046687,Drama,74,99,98
+88,2015,Spotlight,Best Picture,"Michael Sugar, Steve Golin, Nicole Rocklin and Blye Pagon Faust, Producers",20000000,88346473,Crime,81,93,97
+87,2014,Birdman or (The Unexpected Virtue of Ignorance),Best Picture," Alejandro G. Iñárritu, John Lesher and James W. Skotchdopole, Producers",18000000,103215094,Comedy,77,88,92
+86,2013,12 Years a Slave,Best Picture,"Brad Pitt, Dede Gardner, Jeremy Kleiner, Steve McQueen and Anthony Katagas, Producers",20000000,187000000,Biography,81,96,96
+85,2012,Argo,Best Picture,"Grant Heslov, Ben Affleck and George Clooney, Producers",44500000,232324128,Biography,77,86,96
+84,2011,The Artist,Best Picture,"Thomas Langmann, Producer",15000000,133432856,Comedy,79,89,95
+83,2010,The King's Speech,Best Picture,"Iain Canning, Emile Sherman and Gareth Unwin, Producers",15000000,414211549,Biography,80,88,95
+82,2009,The Hurt Locker,Best Picture,"Kathryn Bigelow, Mark Boal, Nicolas Chartier and Greg Shapiro, Producers",15000000,42000000,Drama,76,94,97
+81,2008,Slumdog Millionaire,Best Picture,"Christian Colson, Producer",15000000,377910544,Drama,80,86,91
+80,2007,No Country for Old Men,Best Picture,"Scott Rudin, Ethan Coen and Joel Coen, Producers",25000000,171600000,Crime,81,91,93
+79,2006,The Departed,Best Picture,"Graham King, Producer",90000000,289847354,Crime,85,85,90
+78,2005,Crash,Best Picture,"Paul Haggis and Cathy Schulman, Producers",10000000,98401061,Drama,78,69,75
+77,2004,Million Dollar Baby,Best Picture,"Clint Eastwood, Albert S. Ruddy and Tom Rosenberg, Producers",30000000,216763646,Drama,81,86,90
+76,2003,The Lord of the Rings: The Return of the King,Best Picture,"Barrie M. Osborne, Peter Jackson and Fran Walsh, Producers",79000000,926287400,Adventure,89,94,93
+75,2002,Chicago,Best Picture,"Martin Richards, Producer",45000000,306776732,Comedy,72,82,85
+74,2001,A Beautiful Mind,Best Picture,"Brian Grazer and Ron Howard, Producers",60000000,313542341,Biography,82,72,75
+73,2000,Gladiator,Best Picture,"Douglas Wick, David Franzoni and Branko Lustig, Producers",103000000,457640427,Action,85,67,77
+72,1999,American Beauty,Best Picture,"Bruce Cohen and Dan Jinks, Producers",15000000,356296601,Drama,84,86,88
+71,1998,Shakespeare in Love,Best Picture,"David Parfitt, Donna Gigliotti, Harvey Weinstein, Edward Zwick and Marc Norman, Producers",25000000,289317794,Comedy,72,87,92
+70,1997,Titanic,Best Picture,"James Cameron and Jon Landau, Producers",200000000,1845034188,Drama,78,75,88
+69,1996,The English Patient,Best Picture,"Saul Zaentz, Producer",27000000,231976425,Drama,74,87,84
+68,1995,Braveheart,Best Picture,"Mel Gibson, Alan Ladd, Jr. and Bruce Davey, Producers",72000000,210000000,Biography,84,68,77
+67,1994,Forrest Gump,Best Picture,"Wendy Finerman, Steve Tisch and Steve Starkey, Producers",55000000,677945399,Drama,88,82,72
+66,1993,Schindler's List,Best Picture,"Steven Spielberg, Gerald R. Molen and Branko Lustig, Producers",22000000,321365567,Biography,89,93,97
+65,1992,Unforgiven,Best Picture,"Clint Eastwood, Producer",14000000,159157447,Western,82,85,96
+90,2017,The Shape of Water,Directing,Guillermo del Toro,1940000,194349972,Adventure,74,87,92
+89,2016,La La Land,Directing,Damien Chazelle,30000000,445435700,Comedy,81,93,92
+88,2015,The Revenant,Directing, Alejandro G. Iñárritu,1000500,55561162,Drama,80,76,80
+87,2014,Birdman or (The Unexpected Virtue of Ignorance),Directing, Alejandro G. Iñárritu,18000000,103215094,Comedy,77,88,92
+86,2013,Gravity,Directing,Alfonso Cuarón,20000000,187000000,Sci-Fi,78,96,96
+85,2012,Life of Pi,Directing,Ang Lee,120000000,609016565,Adventure,79,79,87
+84,2011,The Artist,Directing,Michel Hazanavicius,15000000,133432856,Comedy,79,89,95
+83,2010,The King's Speech,Directing,Tom Hooper,15000000,414211549,Biography,80,88,95
+82,2009,The Hurt Locker,Directing,Kathryn Bigelow,15000000,42000000,Drama,76,94,97
+81,2008,Slumdog Millionaire,Directing,Danny Boyle,15000000,377910544,Drama,80,86,91
+80,2007,No Country for Old Men,Directing,Joel Coen and Ethan Coen,25000000,171600000,Crime,81,91,93
+79,2006,The Departed,Directing,Martin Scorsese,90000000,289847354,Crime,85,85,90
+78,2005,Brokeback Mountain,Directing,Ang Lee,14000000,178043761,Drama,77,87,87
+77,2004,Million Dollar Baby,Directing,Clint Eastwood,30000000,216763646,Drama,81,86,90
+76,2003,The Lord of the Rings: The Return of the King,Directing,Peter Jackson,79000000,926287400,Adventure,89,94,93
+75,2002,The Pianist,Directing,Roman Polanski,35000000,120072577,Biography,85,85,95
+74,2001,A Beautiful Mind,Directing,Ron Howard,60000000,313542341,Biography,82,72,75
+73,2000,Traffic,Directing,Steven Soderbergh,48000000,207515725,Crime,76,86,92
+72,1999,American Beauty,Directing,Sam Mendes,15000000,356296601,Drama,84,86,88
+71,1998,Saving Private Ryan,Directing,Steven Spielberg,70000000,481840909,Action,86,90,92
+70,1997,Titanic,Directing,James Cameron,200000000,1845034188,Drama,78,75,88
+69,1996,The English Patient,Directing,Anthony Minghella,27000000,231976425,Drama,74,87,84
+68,1995,Braveheart,Directing,Mel Gibson,72000000,210000000,Biography,84,68,77
+67,1994,Forrest Gump,Directing,Robert Zemeckis,55000000,677945399,Drama,88,82,72
+66,1993,Schindler's List,Directing,Steven Spielberg,22000000,321365567,Biography,89,93,97
+65,1992,Unforgiven,Directing,Clint Eastwood,14000000,159157447,Western,82,85,96
