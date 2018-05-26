@@ -2,9 +2,8 @@
 var $tbody = document.querySelector("tbody");
 var $ceremonyInput = document.querySelector("#ceremony");
 var $yearInput = document.querySelector("#year");
-var $stateInput = document.querySelector("#award");
-var $countryInput = document.querySelector("#genre");
-var $shapeInput = document.querySelector("#Metacritic");
+var $awardInput = document.querySelector("#award");
+var $genreInput = document.querySelector("#genre");
 var $searchBtn = document.querySelector("#search");
 var $recordCounter = document.querySelector("#recordCounter");
 var $pages = document.querySelector("#pages");
@@ -44,14 +43,14 @@ function handlePagesChange() {
 // handleSearchButtonClick search button click:
 
 function handleSearchButtonClick() {
-    var filterCer = $ceremonyInput.value.trim();
-    var filterYear = $yearInput.value.trim();
+    var filterCer = $ceremonyInput.value;
+    var filterYear = $yearInput.value;
     var filterAward = $awardInput.value.trim().toLowerCase();
     var filterGenre = $genreInput.value.trim().toLowerCase();
 
     if (filterCer != "") {
         filteredData = filteredData.filter(function (ceremony) {
-        var dataCer = ceremony.ceremony;
+        var dataCer = ceremony.Ceremony;
         return dataCer === filterCer;
     });
 
@@ -59,21 +58,21 @@ function handleSearchButtonClick() {
 
     if (filterYear != "") {
         filteredData = filteredData.filter(function (year) {
-        var dataYear = year.year;
-        return dataYear === filterYear;
+            var dataYear = year.Year;
+            return dataYear === filterYear;
     });
     }
 
     if (filterAward != "") {
         filteredData = filteredData.filter(function (award) {
-            var dataAward = award.award;
+            var dataAward = award.Award;
             return dataAward === filterAward;
         });
     }
 
-    if (filterGenre!= "") {
+    if (filterGenre != "") {
         filteredData = filteredData.filter(function (genre) {
-            var dataGenre= genre.genre;
+            var dataGenre= genre.Genre;
             return dataGenre === filterGenre;
         });
     }
@@ -87,7 +86,7 @@ function handleReloadButtonClick() {
     count = 0;
     filteredData = dataSet;
     $ceremonyInput.value = '';
-    $cityInput.value = '';
+    $yearInput.value = '';
     $awardInput.value = '';
     $genreInput.value = '';
 
