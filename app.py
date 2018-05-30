@@ -1,6 +1,3 @@
-import os
-
-import pandas as pd
 import numpy as np
 
 import sqlalchemy
@@ -24,11 +21,6 @@ db = SQLAlchemy(app)
 class Oscar(db.Model):
     __tablename__ = 'OSCAR_TABLE'
 
-    # id = db.Column(db.Integer, primary_key=True)
-    # emoji_char = db.Column(db.String)
-    # emoji_id = db.Column(db.String)
-    # name = db.Column(db.String)
-    # score = db.Column(db.Integer)
     id = db.Column(db.Integer, primary_key=True)
     film = db.Column(db.String)
     year = db.Column(db.String)
@@ -50,22 +42,6 @@ class Oscar(db.Model):
     def __repr__(self):
         return '<oscar %r>' % (self.name)
 
-# dbfile = os.path.join('db', 'oscar_winners_db.sqlite')
-# engine = create_engine(f"sqlite:///{dbfile}")
-
-# # reflect an existing database into a new model
-# Base = automap_base()
-# # reflect the tables
-# Base.prepare(engine, reflect=True)
-
-# # Save references to each table
-# winner = Base.classes.OSCAR_TABLE
-# test = Base.classes.sqlite_sequence
-# # Create our session (link) from Python to the DB
-# session = Session(engine)
-
-
-
 
 # Create database tables
 @app.before_first_request
@@ -79,30 +55,16 @@ def setup():
 #################################################
 
 
-# @app.route("/")
-# def index():
-#     """Return the homepage."""
-#     return render_template('index.html')
+@app.route("/")
+def index():
+    """Return the homepage."""
+    return render_template('dash.html')
 
 
 @app.route('/actor')
 def actor():
     """Return a list of sample names."""
 
-    # # Use Pandas to perform the sql query
-    # results = db.session.query(Oscar.film, Oscar.award).\
-    #     order_by(Oscar.film.desc()).\
-    #     limit(10).all()
-    # # Select the top 10 query results
-    # film = [result[0] for result in results]
-    # award = [result[1] for result in results]
-
-    # # Generate the plot trace
-    # plot_trace = {
-    #     "x": film,
-    #     "y": award,
-    #     "type": "bar"
-    # }
         # Use Pandas to perform the sql query
     stmt = db.session.query(Oscar.id, Oscar.film, Oscar.year, Oscar.genre, Oscar.name, Oscar.budget, Oscar.revenue, Oscar.ceremony, Oscar.winner, Oscar.imdb, Oscar.metacritic, Oscar.rottentomatoes,Oscar.award).\
                 filter(Oscar.award == "Actor in a Leading Role").all()
@@ -135,20 +97,6 @@ def actor():
 def actress():
     """Return a list of sample names."""
 
-    # # Use Pandas to perform the sql query
-    # results = db.session.query(Oscar.film, Oscar.award).\
-    #     order_by(Oscar.film.desc()).\
-    #     limit(10).all()
-    # # Select the top 10 query results
-    # film = [result[0] for result in results]
-    # award = [result[1] for result in results]
-
-    # # Generate the plot trace
-    # plot_trace = {
-    #     "x": film,
-    #     "y": award,
-    #     "type": "bar"
-    # }
         # Use Pandas to perform the sql query
     stmt = db.session.query(Oscar.id, Oscar.film, Oscar.year, Oscar.genre, Oscar.name, Oscar.budget, Oscar.revenue, Oscar.ceremony, Oscar.winner, Oscar.imdb, Oscar.metacritic, Oscar.rottentomatoes,Oscar.award).\
                 filter(Oscar.award == "Actress in a Leading Role").all()
@@ -177,20 +125,6 @@ def actress():
 def Director():
     """Return a list of sample names."""
 
-    # # Use Pandas to perform the sql query
-    # results = db.session.query(Oscar.film, Oscar.award).\
-    #     order_by(Oscar.film.desc()).\
-    #     limit(10).all()
-    # # Select the top 10 query results
-    # film = [result[0] for result in results]
-    # award = [result[1] for result in results]
-
-    # # Generate the plot trace
-    # plot_trace = {
-    #     "x": film,
-    #     "y": award,
-    #     "type": "bar"
-    # }
         # Use Pandas to perform the sql query
     stmt = db.session.query(Oscar.id, Oscar.film, Oscar.year, Oscar.genre, Oscar.name, Oscar.budget, Oscar.revenue, Oscar.ceremony, Oscar.winner, Oscar.imdb, Oscar.metacritic, Oscar.rottentomatoes,Oscar.award).\
                 filter(Oscar.award == "Directing").all()
@@ -220,20 +154,7 @@ def Director():
 def Best_Picture():
     """Return a list of sample names."""
 
-    # # Use Pandas to perform the sql query
-    # results = db.session.query(Oscar.film, Oscar.award).\
-    #     order_by(Oscar.film.desc()).\
-    #     limit(10).all()
-    # # Select the top 10 query results
-    # film = [result[0] for result in results]
-    # award = [result[1] for result in results]
 
-    # # Generate the plot trace
-    # plot_trace = {
-    #     "x": film,
-    #     "y": award,
-    #     "type": "bar"
-    # }
         # Use Pandas to perform the sql query
     stmt = db.session.query(Oscar.id, Oscar.film, Oscar.year, Oscar.genre, Oscar.name, Oscar.budget, Oscar.revenue, Oscar.ceremony, Oscar.winner, Oscar.imdb, Oscar.metacritic, Oscar.rottentomatoes,Oscar.award).\
                 filter(Oscar.award == "Best Picture").all()
@@ -258,19 +179,262 @@ def Best_Picture():
         })
     return jsonify(actors)
 
+@app.route('/actor_bar')
+def actor_bar():
+    """Return a list of sample names."""
 
-# @app.route('/best_picture')
-# def actress():
-#     """Return a list of sample names."""
 
-#     # Use Pandas to perform the sql query
-#     stmt = session.query(Oscars).statement
-#     df = pd.read_sql_query(stmt, session.bind)
-#     df_bp = df.loc[df['Award'] == 'Best Picture']
+        # Use Pandas to perform the sql query
+    stmt = db.session.query(Oscar.id, Oscar.film, Oscar.year, Oscar.genre, Oscar.name, Oscar.budget, Oscar.revenue, Oscar.ceremony, Oscar.winner, Oscar.imdb, Oscar.metacritic, Oscar.rottentomatoes,Oscar.award).\
+                filter(Oscar.award == "Actor in a Leading Role").all()
 
-#     # Return a list of the column names (sample names)
-#     return jsonify(df_bp)
+    film = [result[1] for result in stmt]
+    metacritic = [result[10] for result in stmt]
+    imdb = [result[9] for result in stmt]
+    rottentomates = [result[11] for result in stmt]
+    trace1 = {
+        "x": film,
+        "y": imdb,
+        "name": "IMDB",
+        "type": "bar"
+    }
+    trace2 = {
+        "x": film,
+        "y": rottentomates,
+        "name": "rottentomatoes",
+        "type": "bar"
+    }
+    trace3 = {
+        "x": film,
+        "y": metacritic,
+        "name": "metacritic",
+        "type": "bar"
+    }
+    # data = [trace1, trace2, trace3]
 
+    data = [trace1, trace2, trace3]
+    return jsonify(data)
+
+@app.route('/actress_bar')
+def actress_bar():
+    """Return a list of sample names."""
+
+
+        # Use Pandas to perform the sql query
+    stmt = db.session.query(Oscar.id, Oscar.film, Oscar.year, Oscar.genre, Oscar.name, Oscar.budget, Oscar.revenue, Oscar.ceremony, Oscar.winner, Oscar.imdb, Oscar.metacritic, Oscar.rottentomatoes,Oscar.award).\
+                filter(Oscar.award == "Actress in a Leading Role").all()
+
+    film = [result[1] for result in stmt]
+    metacritic = [result[10] for result in stmt]
+    imdb = [result[9] for result in stmt]
+    rottentomates = [result[11] for result in stmt]
+    trace1 = {
+        "x": film,
+        "y": imdb,
+        "name": "IMDB",
+        "type": "bar"
+    }
+    trace2 = {
+        "x": film,
+        "y": rottentomates,
+        "name": "rottentomatoes",
+        "type": "bar"
+    }
+    trace3 = {
+        "x": film,
+        "y": metacritic,
+        "name": "metacritic",
+        "type": "bar"
+    }
+    # data = [trace1, trace2, trace3]
+
+    data = [trace1, trace2, trace3]
+    return jsonify(data)
+
+@app.route('/director_bar')
+def director_bar():
+    """Return a list of sample names."""
+
+
+        # Use Pandas to perform the sql query
+    stmt = db.session.query(Oscar.id, Oscar.film, Oscar.year, Oscar.genre, Oscar.name, Oscar.budget, Oscar.revenue, Oscar.ceremony, Oscar.winner, Oscar.imdb, Oscar.metacritic, Oscar.rottentomatoes,Oscar.award).\
+                filter(Oscar.award == "Directing").all()
+
+    film = [result[1] for result in stmt]
+    metacritic = [result[10] for result in stmt]
+    imdb = [result[9] for result in stmt]
+    rottentomates = [result[11] for result in stmt]
+    trace1 = {
+        "x": film,
+        "y": imdb,
+        "name": "IMDB",
+        "type": "bar"
+    }
+    trace2 = {
+        "x": film,
+        "y": rottentomates,
+        "name": "rottentomatoes",
+        "type": "bar"
+    }
+    trace3 = {
+        "x": film,
+        "y": metacritic,
+        "name": "metacritic",
+        "type": "bar"
+    }
+    data = [trace1, trace2, trace3]
+
+    return jsonify(data)
+
+@app.route('/picture_bar')
+def picture_bar():
+    """Return a list of sample names."""
+
+
+        # Use Pandas to perform the sql query
+    stmt = db.session.query(Oscar.id, Oscar.film, Oscar.year, Oscar.genre, Oscar.name, Oscar.budget, Oscar.revenue, Oscar.ceremony, Oscar.winner, Oscar.imdb, Oscar.metacritic, Oscar.rottentomatoes,Oscar.award).\
+                filter(Oscar.award == "Best Picture").all()
+
+    film = [result[1] for result in stmt]
+    metacritic = [result[10] for result in stmt]
+    imdb = [result[9] for result in stmt]
+    rottentomates = [result[11] for result in stmt]
+    trace1 = {
+        "x": film,
+        "y": imdb,
+         "name": "imdb",
+        "type": "bar"
+    }
+    trace2 = {
+        "x": film,
+        "y": metacritic,
+         "name": "metacritic",
+        "type": "bar"
+    }
+    trace3 = {
+        "x": film,
+        "y": rottentomates,
+        "name": "rottentomates",
+        "type": "bar"
+    }
+    
+    data = [trace1, trace2, trace3]
+    return jsonify(data)
+@app.route('/picture_scatter')
+def picture_scatter():
+    """Return a list of sample names."""
+
+
+        # Use Pandas to perform the sql query
+    stmt = db.session.query(Oscar.id, Oscar.film, Oscar.year, Oscar.genre, Oscar.name, Oscar.budget, Oscar.revenue, Oscar.ceremony, Oscar.winner, Oscar.imdb, Oscar.metacritic, Oscar.rottentomatoes,Oscar.award).\
+                filter(Oscar.award == "Best Picture").all()
+
+    budget = [result[5] for result in stmt]
+    revenue = [result[6] for result in stmt]
+    film = [result[1] for result in stmt]
+
+    trace1 = {
+        "x": budget,
+        "y": revenue,
+        "mode": 'markers+text',
+        "type": 'scatter',
+        "name": 'Films',
+        "text": film,
+        "textposition": 'top center',
+        "textfont": {
+            "family":  'Raleway, sans-serif'
+    },
+
+    }   
+
+    return jsonify(trace1)
+
+@app.route('/actor_scatter')
+def actor_scatter():
+    """Return a list of sample names."""
+
+
+        # Use Pandas to perform the sql query
+    stmt = db.session.query(Oscar.id, Oscar.film, Oscar.year, Oscar.genre, Oscar.name, Oscar.budget, Oscar.revenue, Oscar.ceremony, Oscar.winner, Oscar.imdb, Oscar.metacritic, Oscar.rottentomatoes,Oscar.award).\
+                filter(Oscar.award == "Actor in a Leading Role").all()
+
+    budget = [result[5] for result in stmt]
+    revenue = [result[6] for result in stmt]
+    film = [result[1] for result in stmt]
+
+    trace1 = {
+        "x": budget,
+        "y": revenue,
+        "mode": 'markers+text',
+        "type": 'scatter',
+        "name": 'Films',
+        "text": film,
+        "textposition": 'top center',
+        "textfont": {
+            "family":  'Raleway, sans-serif'
+    },
+
+    }   
+
+    return jsonify(trace1)
+
+@app.route('/actress_scatter')
+def actress_scatter():
+    """Return a list of sample names."""
+
+
+        # Use Pandas to perform the sql query
+    stmt = db.session.query(Oscar.id, Oscar.film, Oscar.year, Oscar.genre, Oscar.name, Oscar.budget, Oscar.revenue, Oscar.ceremony, Oscar.winner, Oscar.imdb, Oscar.metacritic, Oscar.rottentomatoes,Oscar.award).\
+                filter(Oscar.award == "Actress in a Leading Role").all()
+
+    budget = [result[5] for result in stmt]
+    revenue = [result[6] for result in stmt]
+    film = [result[1] for result in stmt]
+
+    trace1 = {
+        "x": budget,
+        "y": revenue,
+        "mode": 'markers+text',
+        "type": 'scatter',
+        "name": 'Films',
+        "text": film,
+        "textposition": 'top center',
+        "textfont": {
+            "family":  'Raleway, sans-serif'
+    },
+
+    }   
+
+    return jsonify(trace1)
+
+@app.route('/director_scatter')
+def director_scatter():
+    """Return a list of sample names."""
+
+
+        # Use Pandas to perform the sql query
+    stmt = db.session.query(Oscar.id, Oscar.film, Oscar.year, Oscar.genre, Oscar.name, Oscar.budget, Oscar.revenue, Oscar.ceremony, Oscar.winner, Oscar.imdb, Oscar.metacritic, Oscar.rottentomatoes,Oscar.award).\
+                filter(Oscar.award == "Directing").all()
+
+    budget = [result[5] for result in stmt]
+    revenue = [result[6] for result in stmt]
+    film = [result[1] for result in stmt]
+
+    trace1 = {
+        "x": budget,
+        "y": revenue,
+        "mode": 'markers+text',
+        "type": 'scatter',
+        "name": 'Films',
+        "text": film,
+        "textposition": 'top center',
+        "textfont": {
+            "family":  'Raleway, sans-serif'
+    },
+
+    }   
+
+    return jsonify(trace1)
 
 if __name__ == "__main__":
     app.run(debug=True)

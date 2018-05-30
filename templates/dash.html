@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flask Plotlyjs Example</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="bar"></div>
+    <script>
+        
+        // Plot the default route once the page loads
+        var default_url = "/actor_bar";
+        Plotly.d3.json(default_url, function(error, response) {
+            if (error) return console.warn(error);
+            var data = [response];
+            var layout = {
+                height: 600,
+                width: 800
+            };
+            Plotly.plot("bar", data, layout)
+        })
+        // Update the plot with new data
+        function updatePlotly(newdata) {
+            if( Array.isArray(newdata) ){
+                var layout = {barmode: 'group'};
+                Plotly.purge("bar");
+                Plotly.plot("bar", newdata, layout);
+            } else {
+                var Bar = document.getElementById('bar');
+                Plotly.restyle(Bar, 'x', [newdata.x])
+                Plotly.restyle(Bar, 'y', [newdata.y])
+            }
+        }
+        // Get new data whenever the dropdown selection changes
+        function getData(route) {
+            console.log(route);
+            Plotly.d3.json(`/${route}`, function(error, data) {
+                console.log("newdata", data);
+                updatePlotly(data);
+            });
+        }
+    </script>
+
+    <select id="selDataset" onchange="getData(this.value)">
+        <option value="actor_bar">Best Actor</option>
+        <option value="actress_bar">Best Actress</option>
+        <option value="director_bar">Best Director</option>
+        <option value="picture_bar">Best Picture</option>
+
+    </select>
+</body>
+</html>
