@@ -45,8 +45,8 @@ function handlePagesChange() {
 function handleSearchButtonClick() {
     var filterCer = $ceremonyInput.value;
     var filterYear = $yearInput.value;
-    var filterAward = $awardInput.value.trim().toLowerCase();
-    var filterGenre = $genreInput.value.trim().toLowerCase();
+    var filterAward = $awardInput.value.toLowerCase();
+    var filterGenre = $genreInput.value.toLowerCase();
 
     if (filterCer != "") {
         filteredData = filteredData.filter(function (ceremony) {
