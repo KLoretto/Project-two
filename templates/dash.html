@@ -4,26 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Flask Plotlyjs Example</title>
+    <title>Academy Awards Dashboard</title>
+    <!-- Boostrap Stylesheet -->
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen"> -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
-<body>
-    <div id="bar"></div>
+<body onload="initialize()">
+    <div class="container">
+        <div class="row">
+                <div class="col-md-12 jumbotron text-center">
+                    <h1>Academy Awards Interactive Dashboard</h1>
+                    <p>Use the interactive charts below to explore the dataset</p>
+                </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <div id="bar"></div>
+                <select id="selDataset" onchange="getData(this.value)">
+                    <option value="actor_bar">Best Actor</option>
+                    <option value="actress_bar">Best Actress</option>
+                    <option value="director_bar">Best Director</option>
+                    <option value="picture_bar">Best Picture</option>
+            
+                </select>
+        </div>  
+        <div class="row">
+        <div class="col-md-2">
+        <div id="scatter"></div>
+        <select id="selDataset" onchange="getData(this.value)">
+            <option value="actor_scatter">Best Actor</option>
+            <option value="actress_scatter">Best Actress</option>
+            <option value="director_scatter">Best Director</option>
+            <option value="picture_scatter">Best Picture</option>
+    
+        </select>
+        </div>      
     <script>
         
         // Plot the default route once the page loads
-        var default_url = "/actor_bar";
-        Plotly.d3.json(default_url, function(error, response) {
+        
+        function initialize() {
+            var default_bar = "/actor_bar";
+            Plotly.d3.json(default_bar, function(error, response) {
             if (error) return console.warn(error);
-            var data = [response];
+            var data = response;
             var layout = {
                 height: 600,
-                width: 800
+                width: 800,
+                barmode: 'group'
             };
-            Plotly.plot("bar", data, layout)
-        })
+                Plotly.plot("bar", data);
+            });
+
+            var default_scatter = "/director_scatter";
+            Plotly.d3.json(default_scatter, function(error, response) {
+                if (error) return console.warn(error);
+                var data = [response];
+                console.log(data);
+                var layout = {
+                        xaxis: {
+                            range: [ 0, 100000000 ]
+                        },
+                        yaxis: {
+                            range: [0, 800000000]
+                        },
+                        legend: {
+                            y: 0.5,
+                            yref: 'paper',
+                            font: {
+                                family: 'Arial, sans-serif',
+                                size: 20,
+                                color: 'grey',
+                    }
+                }
+                };
+            Plotly.plot("scatter", data, layout);
+            });
+        }
+        
         // Update the plot with new data
-        function updatePlotly(newdata) {
+        function updateBar(newdata) {
+            console.log('update bar');
             if( Array.isArray(newdata) ){
                 var layout = {barmode: 'group'};
                 Plotly.purge("bar");
@@ -38,18 +100,30 @@
         function getData(route) {
             console.log(route);
             Plotly.d3.json(`/${route}`, function(error, data) {
-                console.log("newdata", data);
-                updatePlotly(data);
+                if (route.includes("scatter")) {
+                    plot_scatter(data)
+                } else {
+                    updateBar(data);
+                }
             });
         }
+
+        function plot_scatter(data) {
+            console.log('plot scatter');
+            console.log(data);
+            var plotdata = [data];
+           
+            Plotly.purge("scatter");
+            Plotly.plot("scatter", plotdata);
+        }
+        
+        // Update the plot with new data
+        function updateScatter(newdata) {
+            console.log('update');
+            plot_scatter(newdata);
+         }
     </script>
 
-    <select id="selDataset" onchange="getData(this.value)">
-        <option value="actor_bar">Best Actor</option>
-        <option value="actress_bar">Best Actress</option>
-        <option value="director_bar">Best Director</option>
-        <option value="picture_bar">Best Picture</option>
 
-    </select>
 </body>
 </html>
