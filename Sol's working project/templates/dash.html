@@ -7,19 +7,20 @@
     <title>Academy Awards Dashboard</title>
     <!-- Boostrap Stylesheet -->
     <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen"> -->
-    <link rel="stylesheet" href="https://bootswatch.com/3/slate/bootstrap.min.css">
+   
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
 </head>
-<body onload="initialize()">
+<body style="background:	rgb(38, 38, 38)" onload="initialize()">
     <nav style="background:black" class="navbar navbar-default">
         <div class="container-fluid">
 
-          <div style="background:red" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                  <ul class="nav navbar-nav">
-                    <li><a style="color:gold" href="{{ url_for('index', filename='/') }}">Home</a></li>
-                    <li><a style="color:gold" href="{{ url_for('dashboard', filename='/dashboard') }}">Dashboard</a></li>
-                    <li><a style="color:gold" href="{{ url_for('map', filename='/map') }}">Map </a></li>
-                    <li><a style="color:gold" href="{{ url_for('table', filename='/table') }}">Table</a></li>
+          <div  style="background:red; height:75px" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                    <a style="color:gold; line-height: 55px; padding:20px" href="{{ url_for('index', filename='/') }}">Home   </a>
+                    <a style="color:gold; line-height: 55px; padding:20px" href="{{ url_for('dashboard', filename='/dashboard') }}">Dashboard   </a>
+                    <a style="color:gold; line-height: 55px; padding:20px" href="{{ url_for('map', filename='/map') }}">Map   </a>
+                    <a style="color:gold; line-height: 55px; padding:20px" href="{{ url_for('table', filename='/table') }}">Table   </a>
                     
                     
 
@@ -31,14 +32,14 @@
     
     <div class="container">
         <div class="row">
-                <div class="col-md-12 jumbotron text-center">
-                    <h1>Academy Awards Interactive Dashboard</h1>
-                    <p>Use the interactive charts below to explore the dataset</p>
+                <div style="color:white" style="text-align:center" class="col-md-12 jumbotron text-center">
+                    <h1 font-family:"verdana" align="center" >Academy Awards Interactive Dashboard</h1>
+                    <p align="center">Use the interactive charts below to explore the dataset</p>
                 </div>
         </div>
         <div class="row">
             <div class="col-md-2">
-                <div id="pie"></div>
+                <div align="center" id="pie"></div>
                 <select id="selpie" onchange="getData(this.value)">
                     <option value="actor_pie">Best Actor</option>
                     <option value="actress_pie">Best Actress</option>
@@ -50,7 +51,7 @@
     </div>  
         <div class="row">
             <div class="col-md-2">
-                <div id="bar"></div>
+                <div align="center" id="bar"></div>
                 <select id="selDataset" onchange="getData(this.value)">
                     <option value="actor_bar">Best Actor</option>
                     <option value="actress_bar">Best Actress</option>
@@ -62,7 +63,7 @@
         </div> 
         <div class="row">
         <div class="col-md-2">
-        <div id="scatter"></div>
+        <div align="center" id="scatter"></div>
         <select id="selDataset" onchange="getData(this.value)">
             <option value="actor_scatter">Best Actor</option>
             <option value="actress_scatter">Best Actress</option>
