@@ -10,6 +10,28 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body onload="initialize()">
+        <!-- Start of navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid navbar-custom">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right navbar-right-custom">
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Options <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                       <li><a href="{{ url_for('table', filename='/table') }}">Table</a></li>
+                        <li><a href="{{ url_for('map', filename='/map') }}">Map</a></li>
+                        <li><a href="{{ url_for('dashboard', filename='/dashboard') }}">Dashboard</a></li>
+                        <li><a href="{{ url_for('index', filename='/') }}">Home</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </div>
+            </div><!-- /.container-fluid -->
+          </nav>
+          <!-- End of navbar -->
+    
     <div class="container">
         <div class="row">
                 <div class="col-md-12 jumbotron text-center">
@@ -20,11 +42,11 @@
         <div class="row">
             <div class="col-md-2">
                 <div id="pie"></div>
-                <select id="selDataset" onchange="getData(this.value)">
-                    <option value="datasetActor">Best Actor</option>
-                    <option value="datasetActress">Best Actress</option>
-                     <option value="datasetDirector">Best Director</option>
-                     <option value="datasetMovie">Best Movie</option>
+                <select id="selpie" onchange="getData(this.value)">
+                    <option value="actor_pie">Best Actor</option>
+                    <option value="actress_pie">Best Actress</option>
+                     <option value="Director_pie">Best Director</option>
+                     <option value="Best_pie">Best Movie</option>
                 </select>
         
         </div>
@@ -64,24 +86,26 @@
             var data = response;
             var layout = {
                 height: 600,
-                width: 800,
+                width: 1000,
+                title: "Rating Comparison by Winner Category",
                 barmode: 'group'
             };
-                Plotly.plot("bar", data);
+                Plotly.plot("bar", data, layout);
             });
-
-            var default_scatter = "/director_scatter";
+            var default_scatter = "/actor_scatter";
             Plotly.d3.json(default_scatter, function(error, response) {
                 if (error) return console.warn(error);
                 var data = [response];
                 console.log(data);
                 var layout = {
+                        hovermode: 'closest',
                         xaxis: {
                             range: [ 0, 100000000 ]
                         },
                         yaxis: {
                             range: [0, 800000000]
                         },
+                        title: "Revenue Vs Budget by Winner Category",
                         legend: {
                             y: 0.5,
                             yref: 'paper',
@@ -92,9 +116,22 @@
                     }
                 }
                 };
-            Plotly.plot("scatter", data, layout);
+                Plotly.plot("scatter", data, layout);
             });
-            init();
+            var default_pie = "/actor_pie";
+            Plotly.d3.json(default_pie, function(error, response) {
+                if (error) return console.warn(error);
+                var data = [response];
+                console.log(data);
+                var layout = {
+                    height: 700,
+                    width: 800,
+                    title: "Genre Breakout by Winner Category",
+   
+                };
+                Plotly.plot("pie", data, layout);
+            });
+            // init();
         }
         
         // Update the plot with new data
@@ -116,12 +153,13 @@
             Plotly.d3.json(`/${route}`, function(error, data) {
                 if (route.includes("scatter")) {
                     plot_scatter(data)
-                } else {
-                    updateBar(data);
+                } else if (route.includes("bar")) {
+                    updateBar(data) }
+                else {
+                    plot_pie(data);
                 }
             });
         }
-
         function plot_scatter(data) {
             console.log('plot scatter');
             console.log(data);
@@ -130,63 +168,27 @@
             Plotly.purge("scatter");
             Plotly.plot("scatter", plotdata);
         }
+
+        function plot_pie(data) {
+            console.log('plot_pie');
+            console.log(data);
+            var plotdata = [data];
+           
+            Plotly.purge("pie");
+            Plotly.plot("pie", plotdata);
+        }
         
         // Update the plot with new data
         function updateScatter(newdata) {
             console.log('update');
             plot_scatter(newdata);
          }
-
-        function init() {
-        var data = [{
-        values: [11, 9, 3, 2, 1, 0, 0, 0],
-        labels: ["Biography", "Drama", "Comedy", "Crime", "Action", "Adventure", "Sci-fi", "Western"],
-        colors: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#8c564b", "#800080", "#C5B358", "#FF1493"],
-        textfont: {size:28, color:"#FFFFFF"},
-        hoverinfo:"label+percent", 
-            textinfo:"label",     
-        type: "pie"
-        }];
-
-        var layout = {
-            height: 700,
-            width: 800,
-            
-        };
-        Plotly.purge("pie");
-        Plotly.plot("pie", data, layout);
-        }
-
-        function updatePlotly1(newdata) {
-        var PIE = document.getElementById("pie");
-        Plotly.restyle(PIE, "values", [newdata]);
-        }
-
-        function getData1(dataset) {
-        var data = [];
-        switch (dataset) {
-            case "datasetActor":
-            data = [11, 9, 3, 2, 1, 0, 0, 0];
-            break;
-            case "datasetActress":
-            data = [8, 11, 4, 3, 0, 0, 0, 0];    
-            break;
-            case "datasetDirector":
-            data = [5, 9, 3, 3, 1, 3, 1, 1];
-            break;
-            case "datasetMovie":
-            data = [6, 9, 4, 3, 1, 2, 0, 1];
-            break;
-            default:
-            data = [11, 9, 3, 2, 1, 0, 0, 0];
-        }
-        updatePlotly1(data);
-        }
-
-
-
-
-
+         
+        
+        function updatepie(newdata) {
+            console.log('update');
+            plot_pie(newdata);
+         }
     </script>
 
 
