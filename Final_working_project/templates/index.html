@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fireworks</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+	<meta name="viewport" content="width-device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+	<script type="text/javascript" src="{{ url_for('static', filename='css/style.css') }}"></script>
+</head>
+<body>
+  <div class="hero text-center">
+    <h1>The Oscars</h1>
+	<div class="demo">
+     </div>
+     <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+     <script src="{{ url_for('static', filename='js/jquery.fireworks.js') }}"></script>
+     <script>
+     $('.demo').fireworks({ sound: false, opacity: 0.42, width: '100%', height: '100%' });
+     </script>
+     <h3>Click for Oscar information</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="box red"><a href="{{ url_for('table', filename='/table') }}">Table</a><img src="{{ url_for('static', filename='images/oscars.png') }}" alt=""></div>
+        </div>
+        <div class="col-md-6">
+          <div class="box red"><a href="{{ url_for('dashboard', filename='/dashboard') }}">Dashboard</a><img src="{{ url_for('static', filename='images/oscars.png') }}" alt=""></div>
+        </div>
+      </div>  
+      <div class="row">  
+        <div class="col-md-12">
+          <div class="box red center"><a href="{{ url_for('map', filename='/map') }}">Map</a><img src="{{ url_for('static', filename='images/oscars.png') }}" alt=""></div>
+        </div>
+      </div>  
+        <footer class="footer">
+          <span class="center">Oscars Info Page</span>
+        </footer> 
+    </div>
+  </div>	  
+</body>
+</html>

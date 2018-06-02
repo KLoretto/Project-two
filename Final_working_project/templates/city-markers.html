@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>City Markers</title>
+
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://bootswatch.com/3/slate/bootstrap.min.css"> 
+    <!-- Our CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}" />
+  <!-- Our CSS -->
+</head>
+
+<body>
+  <nav style="background:black" class="navbar navbar-default">
+    <div class="container-fluid">
+
+      <div style="background:red" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a style="color:gold" href="{{ url_for('index', filename='/') }}">Home</a></li>
+                <li><a style="color:gold" href="{{ url_for('dashboard', filename='/dashboard') }}">Dashboard</a></li>
+                <li><a style="color:gold" href="{{ url_for('map', filename='/map') }}">Map </a></li>
+                <li><a style="color:gold" href="{{ url_for('table', filename='/table') }}">Table</a></li>
+                
+                
+
+      </ul>
+      </div>
+    </div>
+  </nav>  
+      <!-- End of navbar -->
+  <!-- The div where we will inject our map -->
+  <div id="map"></div>
+
+  <!-- Our JS -->
+  <script>
+      
+      var cities = [{
+    location: [51.509865, -0.118092],
+    location1: [40.7128, -74.006],
+    location2: [20.6597, -103.3496],
+    name: "New Cross, London",
+    name1: "New York City",
+    name2: "Guadalajara",
+    Actor: "Gary Oldman",
+    Actor1: "Frances McDormand",
+    Actor2: "Guillermo del Toro"
+  },
+  {
+    location: [41.5532, -70.6086],
+    location1: [33.4942, -111.9261],
+    location2: [41.824, -71.4128],
+    name: "Falmouth",
+    name1: "Scottsdale",
+    name2: "Providence",
+    Actor: "Casey Affleck",
+    Actor1: "Emma Stone",
+    Actor2: "Damien Chazelle"
+  },
+  {
+    location: [34.0928, -118.3287],
+    location1: [34.0928, -118.3287],
+    location2: [19.4326, -99.1332],
+    name: "Hollywood",
+    name1: "Sacramento",
+    name2: "Mexico City",
+    Actor: "Leonardo DiCaprio",
+    Actor1: "Brie Larson",
+    Actor2: "Alejandro G. Iñárritu"
+  },
+  {
+    location: [51.4975, -0.1357],
+    location1: [35.0527, -78.8784],
+    location2: [19.4326, -99.1332],
+    name: "London",
+    name1: "Fayetteville",
+    name2: "Mexico City",
+    Actor: "Eddie Redmayne",
+    Actor1: "Julianne Moore",
+    Actor2: "Alejandro G. Iñárritu"
+  },
+  {
+    location: [29.2097, -99.7862],
+    location1: [-37.7688, 145.0423],
+    location2: [19.4326, -99.1332],
+    name: "Uvalde",
+    name1: "Ivanhoe",
+    name2: "Mexico City",
+    Actor: "Matthew McConaughey",
+    Actor1: "Cate Blanchett",
+    Actor2: "Alfonso Cuarón"
+  },
+  {
+    location: [51.5074, -0.1278],
+    location1: [38.2726, -85.6627],
+    location2: [22.552, 120.5488],
+    name: "London",
+    name1: "Indian Hills",
+    name2: "Pingtung",
+    Actor: "Daniel Day-Lewis",
+    Actor1: "Jennifer Lawrence",
+    Actor2: "Ang Lee"
+  },
+  {
+    location: [48.8285, 2.2188],
+    location1: [40.7146, -74.3646],
+    location2: [48.8566, 2.3522],
+    name: "Hauts-De-Seine",
+    name1: "Summit",
+    name2: "Paris",
+    Actor: "Jean Dujardin",
+    Actor1: "Meryl Streep",
+    Actor2: "Michel Hazanavicius"
+  },
+  {
+    location: [51.0577, 1.3081],
+    location1: [31.7683, 35.2137],
+    location2: [51.5074, 0.1278],
+    name: "Hampshire",
+    name1: "Jerusalem",
+    name2: "London",
+    Actor: "Colin Firth",
+    Actor1: "Natalie Portman",
+    Actor2: "Tom Hooper"
+  },
+  {
+    location: [34.0522, -118.2437],
+    location1: [38.8816, -77.091],
+    location2: [37.5072, -122.2605],
+    name: "Los Angeles",
+    name1: "Arlington County",
+    name2: "San Carlos",
+    Actor: "Jeff Bridges",
+    Actor1: "Sandra Bullock",
+    Actor2: "Kathryn Bigelow"
+  },
+  {
+    location: [34.0195, -118.2437],
+    location1: [51.4543, 0.9781],
+    location2: [53.4808, 2.2426],
+    name: "Santa Monica",
+    name1: "Reading",
+    name2: "Manchester",
+    Actor: "Sean Penn",
+    Actor1: "Kate Winslet",
+    Actor2: "Danny Boyle"
+  },
+  {
+    location: [51.5074, -0.1278],
+    location1: [48.8566, 2.3522],
+    location2: [44.9778, -93.265],
+    name: "London",
+    name1: "Paris",
+    name2: "Minneapolis",
+    Actor: "Daniel Day-Lewis",
+    Actor1: "Marion Cotillard",
+    Actor2: "Joel Coen and Ethan Coen"
+  },
+  {
+    location: [32.5007, -94.7405],
+    location1: [51.5074, 0.1278],
+    location2: [40.7282, -73.7949],
+    name: "Longview",
+    name1: "London",
+    name2: "Queens",
+    Actor: "Forest Whitaker",
+    Actor1: "Helen Mirren",
+    Actor2: "Martin Scorsese"
+  },
+  {
+    location: [43.0987, -77.4419],
+    location1: [29.9511, -90.0715],
+    location2: [22.552, 120.5488],
+    name: "Fairport",
+    name1: "New Orleans",
+    name2: "Pingtung",
+    Actor: "Philip Seymour Hoffman",
+    Actor1: "Reese Witherspoon",
+    Actor2: "Ang Lee"
+  },
+  {
+    location: [32.736, -96.2753],
+    location1: [40.8136, -96.7026],
+    location2: [37.7749, -122.4194],
+    name: "Terrell",
+    name1: "Lincoln",
+    name2: "San Francisco",
+    Actor: "Jamie Foxx",
+    Actor1: "Hilary Swank",
+    Actor2: "Clint Eastwood"
+  },
+  {
+    location: [34.0195, -118.4912],
+    location1: [26.1511, 28.3696],
+    location2: [-41.0362, 174.8871],
+    name: "Santa Monica",
+    name1: "Benoni",
+    name2: "Pukerua Bay",
+    Actor: "Sean Penn",
+    Actor1: "Charlize Theron",
+    Actor2: "Peter Jackson"
+  },
+  {
+    location: [42.139, -83.2418],
+    location1: [21.3069, -157.8583],
+    location2: [48.8566, 2.3522],
+    name: "Woodhaven",
+    name1: "Honolulu",
+    name2: "Paris",
+    Actor: "Adrien Brod",
+    Actor1: "Nicole Kidman",
+    Actor2: "Roman Polanski"
+  },
+  {
+    location: [40.9126, -73.8371],
+    location1: [41.4993, -81.6944],
+    location2: [34.5023, -97.9578],
+    name: "Mount Vernon",
+    name1: "Cleveland",
+    name2: "Duncan",
+    Actor: "Denzel Washington",
+    Actor1: "Halle Berry",
+    Actor2: "Ron Howard"
+  },
+  {
+    location: [-41.2865, 174.7762],
+    location1: [33.884, -84.5144],
+    location2: [33.749, -84.388],
+    name: "Wellington",
+    name1: "Smyrna",
+    name2: "Atlanta",
+    Actor: "Russell Crowe",
+    Actor1: "Julia Roberts",
+    Actor2: "Steven Soderbergh"
+  },
+  {
+    location: [40.7489, -74.261],
+    location1: [40.8136, -96.7026],
+    location2: [51.467, 1.1854],
+    name: "South Orange",
+    name1: "Lincoln",
+    name2: "Berkshire",
+    Actor: "Kevin Spacey",
+    Actor1: "Hilary Swank",
+    Actor2: "Sam Mendes"
+  },
+  {
+    location: [43.7711, 11.2486],
+    location1: [34.0522, -118.2437],
+    location2: [39.1031, -84.512],
+    name: "Tuscany",
+    name1: "Los Angeles",
+    name2: "Cincinnati",
+    Actor: "Roberto Benignik",
+    Actor1: "Gwyneth Paltrow",
+    Actor2: "Steven Spielberg"
+  },
+  {
+    location: [40.2091, -74.0386],
+    location1: [34.0211, -118.3965],
+    location2: [49.3803, -82.4001],
+    name: "Neptune",
+    name1: "Culver City",
+    name2: "Kapuskasing",
+    Actor: "Jack Nicholson",
+    Actor1: "Helen Hunt",
+    Actor2: "James Cameron"
+  },
+  {
+    location: [-27.5598, 151.9507],
+    location1: [40.7128, -74.006],
+    location2: [50.73, 1.1633],
+    name: "Toowoomba",
+    name1: "New York City",
+    name2: "Isle of Wight",
+    Actor: "Geoffrey Rush",
+    Actor1: "Frances McDormand",
+    Actor2: "Anthony Minghella"
+  },
+  {
+    location: [33.7701, -118.1937],
+    location1: [40.7128, -74.006],
+    location2: [41.2901, -73.9204],
+    name: "Long Beach",
+    name1: "New York City",
+    name2: "Peekskill",
+    Actor: "Nicolas Cage",
+    Actor1: "Susan Sarandon",
+    Actor2: "Mel Gibson"
+  },
+  {
+    location: [37.978, -122.0311],
+    location1: [46.7218, -92.4612],
+    location2: [41.8781, -87.6298],
+    name: "Tom Hanks",
+    name1: "Cloquet",
+    name2: "Chicago",
+    Actor: "Concord",
+    Actor1: "Jessica Lange",
+    Actor2: "Robert Zemeckis"
+  },
+  {
+    location: [37.978, -122.0311],
+    location1: [33.6676, -84.0177],
+    location2: [39.1031, -84.512],
+    name: "Tom Hanks",
+    name1: "Conyers",
+    name2: "Cincinnati",
+    Actor: "Concord",
+    Actor1: "Holly Hunter",
+    Actor2: "Steven Spielberg"
+  },
+  {
+    location: [40.8116, -73.9465],
+    location1: [51.5074, 0.1278],
+    location2: [37.7749, -122.4194],
+    name: "Harlem",
+    name1: "London",
+    name2: "San Francisco",
+    Actor: "Al Pacino",
+    Actor1: "Emma Thompson",
+    Actor2: "Clint Eastwood"
+  }
+                    
+  ];
+  // "{{ url_for('static', filename='js/oscar.png') }}",
+  var myIcon = L.icon({
+      iconUrl: "{{ url_for('static', filename='images/oscar.png') }}",
+      iconSize: [38, 95],
+      iconAnchor: [22, 94],
+      popupAnchor: [-3, -76],
+  });
+
+  var actormarker = []
+  var actressmarker = []
+  var directormarker = []
+
+  // Loop through the cities array and create one marker for each city, bind a popup containing its name and Actor add it to the map
+  for (var i = 0; i < cities.length; i++) {
+    var city = cities[i];
+    actormarker.push(L.marker(
+        city.location, {
+        icon: myIcon})
+      .bindPopup("<h1>" + city.name + "</h1> <hr> <h3>Actor " + city.Actor + "</h3>"))
+    actressmarker.push(L.marker(
+        city.location1, {
+        icon: myIcon})
+      .bindPopup("<h1>" + city.name1 + "</h1> <hr> <h3>Actress " + city.Actor1 + "</h3>"))
+    directormarker.push(L.marker(
+        city.location2, {
+        icon: myIcon})
+      .bindPopup("<h1>" + city.name2 + "</h1> <hr> <h3>Director " + city.Actor2 + "</h3>"))
+  }
+
+  // Add a tile layer
+  // Add a tile layer
+  var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/dark-v9/tiles/256/{z}/{x}/{y}?" +
+  "access_token=pk.eyJ1Ijoic29sb21vbm1pbGxlciIsImEiOiJjamh2N3BodWQwd2kyM3FuNGQzd3lpbnVzIn0.SKBVAffbLBOG0nRUq5QYAg"
+  );
+
+  // Define variables for our base layers
+  var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/outdoors-v10/tiles/256/{z}/{x}/{y}?" +
+  "access_token=pk.eyJ1Ijoic29sb21vbm1pbGxlciIsImEiOiJjamh2N3BodWQwd2kyM3FuNGQzd3lpbnVzIn0.SKBVAffbLBOG0nRUq5QYAg"
+  );
+  var Actor = L.layerGroup(actormarker);
+  var Actress = L.layerGroup(actressmarker);
+  var Director = L.layerGroup(directormarker);
+
+
+  // Create a baseMaps object
+  var baseMaps = {
+    "Street Map": streetmap,
+    "Dark Map": darkmap
+  };
+
+  // Create an overlay object
+  var overlayMaps = {
+    "Actor Home": Actor,
+    "Actress Home": Actress,
+    "Director Home": Director
+  };
+
+  // Create a map object
+  var myMap = L.map("map", {
+    center: [37.983810, 23.727539],
+    zoom: 2,
+    layers: [darkmap, Actor, Actress, Director]
+  });
+
+  // Pass our map layers into our layer control
+  // Add the layer control to the map
+  L.control.layers(baseMaps, overlayMaps, {
+    collapsed: false
+  }).addTo(myMap);
+  
+  
+</script>  
+</body>
+</html>

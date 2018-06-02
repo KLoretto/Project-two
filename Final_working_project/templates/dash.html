@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Academy Awards Dashboard</title>
+    <!-- Boostrap Stylesheet -->
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen"> -->
+   
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+</head>
+<body style="background:	rgb(38, 38, 38)" onload="initialize()">
+    <nav style="background:black" class="navbar navbar-default">
+        <div class="container-fluid">
+
+          <div  style="background:red; height:75px" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                    <a style="color:gold; line-height: 55px; padding:20px" href="{{ url_for('index', filename='/') }}">Home   </a>
+                    <a style="color:gold; line-height: 55px; padding:20px" href="{{ url_for('dashboard', filename='/dashboard') }}">Dashboard   </a>
+                    <a style="color:gold; line-height: 55px; padding:20px" href="{{ url_for('map', filename='/map') }}">Map   </a>
+                    <a style="color:gold; line-height: 55px; padding:20px" href="{{ url_for('table', filename='/table') }}">Table   </a>
+                    
+                    
+
+          </ul>
+          </div>
+        </div>
+      </nav>
+    <!-- End of navbar -->
+    
+    <div class="container">
+        <div class="row">
+                <div style="color:white" style="text-align:center" class="col-md-12 jumbotron text-center">
+                    <h1 font-family:"verdana" align="center" >Academy Awards Interactive Dashboard</h1>
+                    <p align="center">Use the interactive charts below to explore the dataset</p>
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div align="center" id="pie"></div>
+                <select id="selpie" onchange="getData(this.value)">
+                    <option value="actor_pie">Best Actor</option>
+                    <option value="actress_pie">Best Actress</option>
+                     <option value="Director_pie">Best Director</option>
+                     <option value="Best_pie">Best Movie</option>
+                </select>
+        
+        </div>
+    </div>  
+        <div class="row">
+            <div class="col-md-2">
+                <div align="center" id="bar"></div>
+                <select id="selDataset" onchange="getData(this.value)">
+                    <option value="actor_bar">Best Actor</option>
+                    <option value="actress_bar">Best Actress</option>
+                    <option value="director_bar">Best Director</option>
+                    <option value="picture_bar">Best Picture</option>
+            
+                </select>
+            </div>  
+        </div> 
+        <div class="row">
+        <div class="col-md-2">
+        <div align="center" id="scatter"></div>
+        <select id="selDataset" onchange="getData(this.value)">
+            <option value="actor_scatter">Best Actor</option>
+            <option value="actress_scatter">Best Actress</option>
+            <option value="director_scatter">Best Director</option>
+            <option value="picture_scatter">Best Picture</option>
+    
+        </select>
+        </div>
+        </div>   
+    <script>
+        
+        // Plot the default route once the page loads
+        
+        function initialize() {
+            var default_bar = "/actor_bar";
+            Plotly.d3.json(default_bar, function(error, response) {
+            if (error) return console.warn(error);
+            var data = response;
+            var layout = {
+                height: 600,
+                width: 1000,
+                title: "Rating Comparison by Winner Category",
+                barmode: 'group'
+            };
+                Plotly.plot("bar", data, layout);
+            });
+            var default_scatter = "/actor_scatter";
+            Plotly.d3.json(default_scatter, function(error, response) {
+                if (error) return console.warn(error);
+                var data = [response];
+                console.log(data);
+                var layout = {
+                        hovermode: 'closest',
+                        xaxis: {
+                            range: [ 0, 100000000 ]
+                        },
+                        yaxis: {
+                            range: [0, 800000000]
+                        },
+                        title: "Revenue Vs Budget by Winner Category",
+                        legend: {
+                            y: 0.5,
+                            yref: 'paper',
+                            font: {
+                                family: 'Arial, sans-serif',
+                                size: 20,
+                                color: 'grey',
+                    }
+                }
+                };
+                Plotly.plot("scatter", data, layout);
+            });
+            var default_pie = "/actor_pie";
+            Plotly.d3.json(default_pie, function(error, response) {
+                if (error) return console.warn(error);
+                var data = [response];
+                console.log(data);
+                var layout = {
+                    height: 700,
+                    width: 800,
+                    title: "Genre Breakout by Winner Category",
+   
+                };
+                Plotly.plot("pie", data, layout);
+            });
+            // init();
+        }
+        
+        // Update the plot with new data
+        function updateBar(newdata) {
+            console.log('update bar');
+            if( Array.isArray(newdata) ){
+                var layout = {barmode: 'group'};
+                Plotly.purge("bar");
+                Plotly.plot("bar", newdata, layout);
+            } else {
+                var Bar = document.getElementById('bar');
+                Plotly.restyle(Bar, 'x', [newdata.x])
+                Plotly.restyle(Bar, 'y', [newdata.y])
+            }
+        }
+        // Get new data whenever the dropdown selection changes
+        function getData(route) {
+            console.log(route);
+            Plotly.d3.json(`/${route}`, function(error, data) {
+                if (route.includes("scatter")) {
+                    plot_scatter(data)
+                } else if (route.includes("bar")) {
+                    updateBar(data) }
+                else {
+                    plot_pie(data);
+                }
+            });
+        }
+        function plot_scatter(data) {
+            console.log('plot scatter');
+            console.log(data);
+            var plotdata = [data];
+           
+            Plotly.purge("scatter");
+            Plotly.plot("scatter", plotdata);
+        }
+
+        function plot_pie(data) {
+            console.log('plot_pie');
+            console.log(data);
+            var plotdata = [data];
+           
+            Plotly.purge("pie");
+            Plotly.plot("pie", plotdata);
+        }
+        
+        // Update the plot with new data
+        function updateScatter(newdata) {
+            console.log('update');
+            plot_scatter(newdata);
+         }
+         
+        
+        function updatepie(newdata) {
+            console.log('update');
+            plot_pie(newdata);
+         }
+    </script>
+
+
+</body>
+</html>
